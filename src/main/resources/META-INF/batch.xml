@@ -1,0 +1,5 @@
+<batch-artifacts xmlns="http://xmlns.jcp.org/xml/ns/javaee">
+    <ref id="itemReader" class="br.com.tecsinapse.batch.chunk.ItemReader"/>
+    <ref id="itemProcessor" class="br.com.tecsinapse.batch.chunk.ItemProcessor"/>
+    <ref id="itemWriter" class="br.com.tecsinapse.batch.chunk.ItemWriter"/>
+</batch-artifacts>
