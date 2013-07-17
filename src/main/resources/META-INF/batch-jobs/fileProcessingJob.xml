@@ -26,10 +26,6 @@
             </listeners>
             
             <chunk item-count="2" retry-limit="3" >  
-             
-                <partition>
-                    <mapper ref="partitionMapper" />
-                </partition>              
                 
                 <reader ref="itemReader">
                 </reader> 
@@ -42,8 +38,14 @@
                 
                 <writer ref="itemWriter">
                 </writer> 
+                <retryable-exception-classes>
+                    <include class="java.lang.NullPointerException"/>
+                    <exclude class="java.io.FileNotFoundException"/>
+                </retryable-exception-classes>
             </chunk>
-            
+            <partition>
+                <mapper ref="partitionMapper" />
+            </partition>    
         </step>
 
         <step id="compactarArquivos">
